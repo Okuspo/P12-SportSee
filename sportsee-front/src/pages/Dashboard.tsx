@@ -1,8 +1,8 @@
 import React, { FC, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import UserBarChart from '../components/UserBarChart'
-import UserLineChart from '../components/UserLineChart'
-import UserRadarChart from '../components/UserRadarChart'
+import DailyActivity from '../components/DailyActivity'
+import AverageSessions from '../components/AverageSessions'
+import Performance from '../components/Performance'
 import UserMetrics from '../components/UserMetrics'
 import { UserData } from '../types'
 import Score from '../components/Score'
@@ -50,25 +50,15 @@ const Dashboard: FC = () => {
 
   useEffect(() => { getUserData(id!, port!) }, [])
 
-  console.log(userData)
-  const userMainData = userData?.mainData
-  const userActivity = userData?.activityData
-  const userAverageSessions = userData?.averageSessionsData
-  const userPerformance = userData?.performanceData
-
-  console.log('main: ', userMainData)
-  console.log('activity: ', userActivity?.sessions)
-  console.log('average sessions: ', userAverageSessions?.sessions)
-  console.log('performance: ', userPerformance)
-
   if (userData) {
+    console.log(userData.mainData.keyData)
     return (
       <div className="Dashboard">
-        <h1 className="welcome-heading">Bonjour <span className="user-name"></span></h1>
+        <h1 className="welcome-heading">Bonjour <span className="user-name">{userData.mainData.userInfos.firstName}</span></h1>
         <span> Félicitations ! Vous avez explosé vos objectifs hier</span>
-        <UserBarChart {...userData.activityData}/>
-        <UserLineChart {...userData.averageSessionsData}/>
-        <UserRadarChart {...userData.performanceData}/>
+        <DailyActivity {...userData.activityData}/>
+        <AverageSessions {...userData.averageSessionsData}/>
+        <Performance {...userData.performanceData}/>
         <UserMetrics {...userData.mainData.keyData}/>
         <Score {...userData.mainData} />
       </div>

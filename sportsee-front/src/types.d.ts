@@ -13,7 +13,7 @@ interface UserInfo {
   interface User {
     id: number
     userInfos: UserInfo
-    todayScore: number
+    score: number
     keyData: KeyData
   }
 

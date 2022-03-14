@@ -1,0 +1,21 @@
+@use '../abstract/' as a;
+.metric {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+.metric-data {
+    margin-left: 10px;
+}
+
+.metric-value {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.metric-type {
+    color: a.$clr-dgrey;
+    font-weight: 500;
+    font-size: 14px;
+}
