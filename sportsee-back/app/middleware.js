@@ -7,6 +7,4 @@ const handleNoUserData = (res, userData) => {
     return res.json({data: userData})
 }
 
-module.exports = {
-    handleNoUserData
-}
+export { handleNoUserData }

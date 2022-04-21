@@ -1,9 +1,0 @@
-@use '../abstract/' as a;
-.welcome-heading {
-    font-weight: 700;
-    font-size: 30px;
-}
-
-.user-name {
-    color: a.$clr-red;
-}

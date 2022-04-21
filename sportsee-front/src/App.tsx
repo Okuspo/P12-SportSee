@@ -3,38 +3,15 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Dashboard from './pages/Dashboard'
 import NotFound from './pages/NotFound'
-import VerticalNav from './components/VerticalNav'
-import HorizontalNav from './components/HorizontalNav'
 
 const App: FC = () => {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={
-          <>
-            <VerticalNav />
-            <HorizontalNav />
-            <Home />
-          </>
-
-          }/>
-          <Route path="/user/:id" element={
-          <>
-            <VerticalNav />
-            <HorizontalNav />
-            <Dashboard />
-          </>
-
-          } />
-          <Route path="*" element={
-          <>
-            <VerticalNav />
-            <HorizontalNav />
-            <NotFound />
-          </>
-
-          } />
+          <Route path="/" element={<Home />}/>
+          <Route path="/user/:id" element={<Dashboard />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
 

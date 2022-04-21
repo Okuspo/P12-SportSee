@@ -1,0 +1,46 @@
+@use '../abstract/' as a;
+
+.welcome-heading {
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.dashboard-main {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+}
+
+.user-name {
+    color: a.$clr-red;
+}
+
+.dashboard-charts {
+    display: grid;
+    grid-template-areas:    "a a a b"
+                            "c d e b";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 50px 50px;
+    height: 80%;
+}
+
+.chart-activity {
+    grid-area: a;
+}
+  
+.chart-metrics {
+    grid-area: b;
+}
+
+.chart-average {
+    grid-area: c;
+    background: FF0000;
+}
+
+.chart-performance {
+    grid-area: d;
+}
+
+.chart-score {
+    grid-area: e;
+}

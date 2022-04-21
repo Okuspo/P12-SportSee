@@ -1,0 +1,26 @@
+@use '../abstract/' as a;
+
+.vertical-nav {
+    width: 100px;
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.vnav-icon {
+    height: 60px;
+    width: 60px;
+    margin: 5px 0;
+}
+
+.copyright {
+    color: white;
+    transform: rotate(-90deg);
+    width: max-content;
+    font-size: 12px;
+    position: absolute;
+    bottom: 10px;
+}

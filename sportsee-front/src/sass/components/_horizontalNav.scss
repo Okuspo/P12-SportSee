@@ -1,0 +1,23 @@
+@use '../abstract/' as a;
+
+.horizontal-nav {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 60px;
+}
+
+.navlink {
+    text-decoration: none;
+    color: white;
+    margin: 0 20px;
+}
+
+.navlink.active {
+    text-decoration: none;
+    color: white;
+}

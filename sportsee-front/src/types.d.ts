@@ -1,43 +1,44 @@
-interface UserInfo {
+interface IUserInfo {
     firstName: string
     lastName: string
     age: number
   }
 
-  interface KeyData {
+  interface IMetrics {
     calorieCount: number
     proteinCount: number
     carbohydrateCount: number
     lipidCount: number
   }
-  interface User {
+
+  interface IMain {
     id: number
-    userInfos: UserInfo
+    userInfos: IUserInfo
     score: number
-    keyData: KeyData
+    keyData: IMetrics
   }
 
-  interface Activity {
+  interface IActivity {
     day: string
     kilogram: number
     calories: number
   }
 
-  interface UserActivity {
-    id: number,
-    sessions: Activity[]
+  interface IActivities {
+    userId: number,
+    sessions: IActivity[]
   }
 
-  interface Session {
+  interface ISession {
     day: number,
     sessionLength: number
   }
-  interface UserAverageSessions {
-    id: number,
-    sessions: Session[]
+  interface IAverage {
+    userId: number,
+    sessions: ISession[]
   }
 
-  interface Kind {
+  interface IKind {
     1: string
     2: string
     3: string
@@ -46,22 +47,20 @@ interface UserInfo {
     6: string
   }
 
-  interface PerformanceData {
+  interface IPerformanceData {
     value: number
     kind: number
   }
 
-  interface UserPerformance {
-    id: number
-    kind: Kind
-    data: PerformanceData[]
+  interface IPerformance {
+    userId: number
+    kind: IKind
+    data: IPerformanceData[]
   }
 
-  interface UserData {
-    mainData: User
-    activityData: UserActivity
-    averageSessionsData: UserAverageSessions
-    performanceData: UserPerformance
-  }
+  type IAllMains = IMain[]
+  type IAllActivities = IActivities[]
+  type IAllPerformances = IPerformance[]
+  type IAllAverages = IAverage[]
 
-export { User, UserData, UserActivity, UserAverageSessions, UserPerformance, KeyData }
+export { IAllMains, IAllActivities, IAllPerformances, IActivity, ISession, IPerformanceData, IKind, IAllAverages, IMain, IPerformance, IActivities, IAverage, IMetrics }

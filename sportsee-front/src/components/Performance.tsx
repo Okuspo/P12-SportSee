@@ -1,67 +1,53 @@
-import React, { FC } from 'react'
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from 'recharts'
-import { UserPerformance } from '../types'
+import React from 'react'
+import { ResponsiveContainer, Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts'
+import { IPerformanceData, IKind } from '../types'
 
-const Performance: FC<UserPerformance> = ({ kind, data }: UserPerformance) => {
-  // console.log('Performance component: ', kind, data)
-  const data2 = [
-    {
-      subject: 'Math',
-      A: 120,
-      B: 110,
-      fullMark: 150
-    },
-    {
-      subject: 'Chinese',
-      A: 98,
-      B: 130,
-      fullMark: 150
-    },
-    {
-      subject: 'English',
-      A: 86,
-      B: 130,
-      fullMark: 150
-    },
-    {
-      subject: 'Geography',
-      A: 99,
-      B: 100,
-      fullMark: 150
-    },
-    {
-      subject: 'Physics',
-      A: 85,
-      B: 90,
-      fullMark: 150
-    },
-    {
-      subject: 'History',
-      A: 65,
-      B: 85,
-      fullMark: 150
+interface IProps {
+  data: IPerformanceData[]
+  kind: IKind
+}
+
+const Performance: React.FC<IProps> = ({ data, kind }: IProps) => {
+  console.log(kind)
+  enum Kind {
+    'Cardio' = 1,
+    'Energie',
+    'Endurance',
+    'Force',
+    'Vitesse',
+    'Intensité'
+  }
+
+  const chartData = data.map(performance => {
+    return {
+      value: performance.value,
+      kind: Kind[performance.kind]
     }
-  ]
+  })
+  
+
   return (
-    <RadarChart
-      cx={300}
-      cy={250}
-      outerRadius={150}
-      width={500}
-      height={500}
-      data={data2}
-    >
-      <PolarGrid />
-      <PolarAngleAxis dataKey="subject" />
-      <PolarRadiusAxis />
-      <Radar
-        name="Mike"
-        dataKey="A"
-        stroke="#8884d8"
-        fill="#8884d8"
-        fillOpacity={0.6}
-      />
-    </RadarChart>
+    <ResponsiveContainer width='100%' height='100%' className='chart-performance'>
+      <RadarChart
+        cx={300}
+        cy={250}
+        outerRadius={150}
+        width={500}
+        height={500}
+        data={chartData}
+      >
+        <PolarGrid />
+        <PolarAngleAxis dataKey="kind" />
+
+        <Radar
+          name="Mike"
+          dataKey="value"
+          stroke="#8884d8"
+          fill="#8884d8"
+          fillOpacity={0.6}
+        />
+      </RadarChart>
+    </ResponsiveContainer>
   )
 }
 

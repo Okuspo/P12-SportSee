@@ -1,50 +1,36 @@
-const express = require('express')
-const idx = require('idx')
+import Express from 'express'
+import idx from 'idx'
+import { getUserById, getUserActivityById, getUserAverageSession, getUserPerformance } from './models.js'
+import { handleNoUserData } from './middleware.js'
 
-const router = express.Router()
+const Router = Express.Router()
 
-const {
-    getUserById,
-    getUserActivityById,
-    getUserAverageSession,
-    getUserPerformance
-} = require('./models')
-
-const {
-    handleNoUserData
-} = require('./middleware')
-
-
-router.get('/user/:id', (req, res) => {
-    const userId = idx(req, _ => _.params.id)
+Router.get('/user/:id', (request, response) => {
+    const userId = idx(request, _ => _.params.id)
     const userData = getUserById(Number(userId))
 
-    return handleNoUserData(res, userData)
+    return handleNoUserData(response, userData)
 })
 
-
-router.get('/user/:id/activity', (req, res) => {
-    const userId = idx(req, _ => _.params.id)
+Router.get('/user/:id/activity', (request, response) => {
+    const userId = idx(request, _ => _.params.id)
     const userData = getUserActivityById(Number(userId))
 
-    return handleNoUserData(res, userData)
+    return handleNoUserData(response, userData)
 })
 
-
-router.get('/user/:id/average-sessions', (req, res) => {
-    const userId = idx(req, _ => _.params.id)
+Router.get('/user/:id/average-sessions', (request, response) => {
+    const userId = idx(request, _ => _.params.id)
     const userData = getUserAverageSession(Number(userId))
 
-    return handleNoUserData(res, userData)
+    return handleNoUserData(response, userData)
 })
 
-
-router.get('/user/:id/performance', (req, res) => {
-    const userId = idx(req, _ => _.params.id)
+Router.get('/user/:id/performance', (request, response) => {
+    const userId = idx(request, _ => _.params.id)
     const userData = getUserPerformance(Number(userId))
 
-    return handleNoUserData(res, userData)
+    return handleNoUserData(response, userData)
 })
 
-
-module.exports = router
+export default Router

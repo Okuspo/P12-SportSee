@@ -1,37 +1,39 @@
 import React, { FC } from 'react'
-import { KeyData } from '../types'
-import Metric from '../components/Metric'
+import { IMetrics } from '../types'
+import Metric from './Metric'
 
-const UserMetrics: FC<KeyData> = (props: KeyData) => {
-  console.log('UserMetrics component: ', props)
+interface IProps {
+  keyData: IMetrics
+}
 
-  const metrics = [
+const UserMetrics: FC<IProps> = ({ keyData }: IProps) => {
+  const metricsTable = [
     {
       metric: 'Calories',
       unit: 'kCal',
-      value: props.calorieCount
+      value: keyData.calorieCount
     },
     {
       metric: 'Proteines',
       unit: 'g',
-      value: props.proteinCount
+      value: keyData.proteinCount
     },
     {
       metric: 'Glucides',
       unit: 'g',
-      value: props.carbohydrateCount
+      value: keyData.carbohydrateCount
     },
     {
       metric: 'Lipides',
       unit: 'g',
-      value: props.lipidCount
+      value: keyData.lipidCount
     }
   ]
 
   return (
-        <div className="userMetrics">
+        <div className="chart-metrics">
           {
-            metrics.map(object => {
+            metricsTable.map(object => {
               return <Metric key={object.metric} value={object.value} name={object.metric} unit={object.unit}/>
             })
           }
