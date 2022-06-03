@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from 'recharts'
 import { ISession } from '../types'
 
 interface IProps {
@@ -22,33 +22,51 @@ const AverageSessions: FC<IProps> = ({ sessions }: IProps) => {
     })
   }
   )
-  console.log(data)
+  const AverageTitle = () => {
+    return (
+      <div className="average-title">Durée moyenne des sessions</div>
+    )
+  }
 
+  const CustomTooltip = ({ active, payload, label }: any) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="average-custom-tooltip">
+          <p className="label">{`${payload[0].value} min`}</p>
+        </div>
+      )
+    }
+
+    return null
+  }
   return (
       <ResponsiveContainer width='100%' height='100%' className='chart-average'>
         <LineChart
         width={500}
-        height={300}
+        height={250}
         data={data}
         margin={{
-          top: 5,
-          right: 30,
+          top: 20,
+          right: 20,
           left: 20,
-          bottom: 5
+          bottom: 20
         }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
+        <XAxis dataKey="name"
+          axisLine={false}
+          tickLine={false}/>
+        <YAxis hide={true}/>
+        <Tooltip content={(data: any) => <CustomTooltip active={data.active} payload={data.payload} label={data.label} />} />
         <Line
-          type="monotone"
-          dataKey="pv"
-          stroke="#8884d8"
-          activeDot={{ r: 8 }}
+          type="natural"
+          dataKey="sessionLength"
+          stroke="#ffffff"
+          strokeWidth={2}
+          dot={false}
+          activeDot={{ stroke: 'white', r: 8 }}
+
         />
-        <Line type="monotone" dataKey="sessionLength" stroke="#82ca9d" />
+        <Legend verticalAlign='top' align='left' content={AverageTitle}/>
       </LineChart>
     </ResponsiveContainer>
   )

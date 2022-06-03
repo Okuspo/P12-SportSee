@@ -1,0 +1,21 @@
+@use '../abstract/' as a;
+.score {
+  height: 250px;
+  background-color: a.$clr-lgrey;
+} 
+
+.score-title {
+  font-weight: bold;
+}
+ .score-legend {
+   font-size: 20px;
+   text-align: center;
+ }
+
+ .score-legend_score {
+   font-weight: bold;
+ }
+
+ .score-legend_text {
+   color: #747474;
+ }

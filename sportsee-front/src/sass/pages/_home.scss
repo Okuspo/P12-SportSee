@@ -1,1 +1,10 @@
 @use '../abstract/' as a;
+
+.home-content {
+  display: flex;
+}
+
+.connect {
+  display: flex;
+  flex-direction: column;
+}

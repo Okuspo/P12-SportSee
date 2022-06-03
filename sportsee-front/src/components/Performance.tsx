@@ -24,26 +24,25 @@ const Performance: React.FC<IProps> = ({ data, kind }: IProps) => {
       kind: Kind[performance.kind]
     }
   })
-  
 
   return (
     <ResponsiveContainer width='100%' height='100%' className='chart-performance'>
       <RadarChart
-        cx={300}
-        cy={250}
-        outerRadius={150}
-        width={500}
-        height={500}
+        cx='50%'
+        cy='50%'
+        outerRadius={70}
+        width={300}
+        height={300}
         data={chartData}
       >
-        <PolarGrid />
-        <PolarAngleAxis dataKey="kind" />
+        <PolarGrid radialLines={false} stroke='#ffffff'/>
+        <PolarAngleAxis dataKey="kind"/>
 
         <Radar
           name="Mike"
           dataKey="value"
-          stroke="#8884d8"
-          fill="#8884d8"
+          stroke="#ff0000"
+          fill="#ff0000"
           fillOpacity={0.6}
         />
       </RadarChart>
