@@ -8,7 +8,6 @@ interface IProps {
 type Payload = number[][]
 
 const Activity: FC<IProps> = ({ sessions }: IProps) => {
-  // console.log('Activity', sessions)
   const data = []
   const payload: Payload = [[], []]
 

@@ -7,4 +7,12 @@
 .connect {
   display: flex;
   flex-direction: column;
+  font-weight: bold;
+
+  & a {
+    text-decoration: none;
+    color: #74798C;
+    font-size: 20px;
+  }
 }
+

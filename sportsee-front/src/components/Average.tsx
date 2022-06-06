@@ -12,7 +12,6 @@ type SessionObject = {
 }
 
 const AverageSessions: FC<IProps> = ({ sessions }: IProps) => {
-  console.log(sessions)
   const weekDays = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
   const data: SessionObject[] = []
   sessions.forEach(session => {
@@ -54,7 +53,9 @@ const AverageSessions: FC<IProps> = ({ sessions }: IProps) => {
       >
         <XAxis dataKey="name"
           axisLine={false}
-          tickLine={false}/>
+          tickLine={false}
+          fill="#fff"
+          />
         <YAxis hide={true}/>
         <Tooltip content={(data: any) => <CustomTooltip active={data.active} payload={data.payload} label={data.label} />} />
         <Line

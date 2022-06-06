@@ -8,7 +8,7 @@ interface IProps {
 }
 
 const Performance: React.FC<IProps> = ({ data, kind }: IProps) => {
-  console.log(kind)
+  //console.log(kind)
   enum Kind {
     'Cardio' = 1,
     'Energie',

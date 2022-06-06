@@ -11,8 +11,8 @@ const Home: FC = () => {
             <VerticalNav />
             <div className="connect">
               <div>Se connecter en tant que</div>
-              <NavLink to="/user/12">Karl Dovineau </NavLink>
-              <NavLink to="/user/18">Cecilia Ratorez </NavLink>
+              <NavLink to="/user/12">👨 Karl Dovineau </NavLink>
+              <NavLink to="/user/18">👩 Cecilia Ratorez </NavLink>
             </div>
 
           </div>

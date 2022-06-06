@@ -28,12 +28,10 @@ const Dashboard: FC = () => {
       const userPerformance = await user.getPerformance()
       const userActivity = await user.getActivity()
       const userAverage = await user.getAverageSessions()
-      // setTimeout -> loader
       setPerformance(userPerformance)
       setMain(userMain)
       setActivity(userActivity)
       setAverage(userAverage)
-      // console.log(userPerformance, userActivity, userAverage, userMain)
     })()
   }
   , [])
@@ -62,10 +60,3 @@ const Dashboard: FC = () => {
 }
 
 export default Dashboard
-
-/*
-IIFE -> capture/closure
-for (let i = 0; i < 10; i++) {
-  ((j) => document.addEventListener('click', () => { console.log(j) }))(i)
-}
- */

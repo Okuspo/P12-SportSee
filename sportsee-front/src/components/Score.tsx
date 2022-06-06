@@ -6,7 +6,6 @@ interface IProps {
 }
 
 const Score: FC<IProps> = ({ score }: IProps) => {
-  console.log('Score component', score)
   const data = [
     {
       uv: 100,
