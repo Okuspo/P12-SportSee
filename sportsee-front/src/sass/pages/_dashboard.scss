@@ -40,10 +40,9 @@
     background-color: a.$clr-lgrey;
     padding: 5px;
 }
-  
-.recharts-layer.recharts-cartesian-axis-tick {
-    color: a.$clr-lgrey;
-    font-size: 20px;
+
+.recharts-text.recharts-cartesian-axis-tick-value {
+    font-size: 12px;
 }
 
 .chart-metrics {
@@ -51,10 +50,13 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    background-color: a.$clr-lgrey;
     padding: 5px;
 }
 
+.metric {
+    background-color: a.$clr-lgrey;
+    padding: 15px;
+}
 .chart-average {
     grid-area: c;
     background: linear-gradient(to right, #ff0000 0%, #ff0000 70%, #e60000 70%, #e60000 100%);
@@ -83,10 +85,6 @@
     font-size: 8px;
 }
 .recharts-polar-angle-axis-tick-value {
-    fill: white;
-}
-
-.recharts-cartesian-axis-tick-value {
     fill: white;
 }
 
