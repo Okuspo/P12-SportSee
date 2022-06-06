@@ -11,6 +11,11 @@ type SessionObject = {
   sessionLength: number
 }
 
+/**
+ *
+ * @param sessions
+ * @returns {JSX}
+ */
 const AverageSessions: FC<IProps> = ({ sessions }: IProps) => {
   const weekDays = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
   const data: SessionObject[] = []

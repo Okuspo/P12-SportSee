@@ -7,6 +7,11 @@ interface IProps {
   kind: IKind
 }
 
+/**
+ * 
+ * @param object 
+ * @returns {JSX}
+ */
 const Performance: React.FC<IProps> = ({ data, kind }: IProps) => {
   //console.log(kind)
   enum Kind {

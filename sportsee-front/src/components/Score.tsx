@@ -5,6 +5,11 @@ interface IProps {
   score: number
 }
 
+/**
+ *
+ * @param score
+ * @returns {JSX}
+ */
 const Score: FC<IProps> = ({ score }: IProps) => {
   const data = [
     {

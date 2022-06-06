@@ -7,6 +7,11 @@ interface IProps {
 }
 type Payload = number[][]
 
+/**
+ *
+ * @param sessions<IActivity[]>
+ * @returns {JSX}
+ */
 const Activity: FC<IProps> = ({ sessions }: IProps) => {
   const data = []
   const payload: Payload = [[], []]

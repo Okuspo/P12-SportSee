@@ -1,6 +1,10 @@
 import * as React from 'react'
 import { NavLink } from 'react-router-dom'
 
+/**
+ *
+ * @returns {JSX}
+ */
 const NotFound = () => {
   return (
     <>

@@ -21,6 +21,11 @@ const iconRef: IIconRef = {
   Proteines: ProteinesIcon
 }
 
+/**
+ *
+ * @param object
+ * @returns {JSX}
+ */
 const Metric: FC <IProps> = ({ value, name, unit }:IProps) => {
   return (
     <div className='metric'>

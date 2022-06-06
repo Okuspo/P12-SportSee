@@ -3,6 +3,10 @@ import { NavLink } from 'react-router-dom'
 import HorizontalNav from '../components/HorizontalNav'
 import VerticalNav from '../components/VerticalNav'
 
+/**
+ *
+ * @returns {JSX}
+ */
 const Home: FC = () => {
   return (
         <div className="home">

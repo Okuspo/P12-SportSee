@@ -6,6 +6,11 @@ interface IProps {
   keyData: IMetrics
 }
 
+/**
+ *
+ * @param object
+ * @returns {JSX}
+ */
 const UserMetrics: FC<IProps> = ({ keyData }: IProps) => {
   const metricsTable = [
     {

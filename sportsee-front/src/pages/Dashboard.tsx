@@ -11,6 +11,10 @@ import NotFound from './NotFound'
 import HorizontalNav from '../components/HorizontalNav'
 import VerticalNav from '../components/VerticalNav'
 
+/**
+ *
+ * @returns {JSX}
+ */
 const Dashboard: FC = () => {
   const { id } = useParams()
   if (!id) return <NotFound />
