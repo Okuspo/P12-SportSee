@@ -61,6 +61,11 @@
     grid-area: c;
     background: linear-gradient(to right, #ff0000 0%, #ff0000 70%, #e60000 70%, #e60000 100%);
     border-radius: 5px;
+
+    & .recharts-text.recharts-cartesian-axis-tick-value {
+        fill: white;
+        opacity: .65;
+    }
 }
 
 .chart-performance {
@@ -86,6 +91,7 @@
 .recharts-polar-angle-axis-tick-value {
     fill: white;
 }
+
 
 .chart-activity_legend {
     display: flex;
@@ -127,3 +133,4 @@
     color: white;
     padding: 5px;
 }
+
